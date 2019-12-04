@@ -35,5 +35,4 @@ ark dir_name do
   owner node['prometheus']['user']
   group node['prometheus']['group']
   extension node['prometheus']['file_extension'] unless node['prometheus']['file_extension'].empty?
-  action :put
 end

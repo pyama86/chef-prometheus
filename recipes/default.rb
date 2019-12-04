@@ -47,14 +47,4 @@ end
 apt_update 'please'
 # Ensure that any unpacking of prometheus doesn't blow away our own configuration
 include_recipe "prometheus::#{node['prometheus']['install_method']}"
-
-# monitor our server instance
-prometheus_job 'prometheus' do
-  scrape_interval   '15s'
-  target            "localhost#{node['prometheus']['flags']['web.listen-address']}"
-  metrics_path      node['prometheus']['flags']['web.telemetry-path']
-end
-
-# -- Do the install -- #
-
 include_recipe 'prometheus::service'

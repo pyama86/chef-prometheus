@@ -259,6 +259,7 @@ default['prometheus']['alertmanager']['storage.path']                           
 
 # Alertmanager configuration chef template name.
 default['prometheus']['alertmanager']['config_cookbook_name']                             = 'prometheus'
+default['prometheus']['alertmanager']['peer']                                             = nil
 
 # Alertmanager custom configuration cookbook.  Use this if you'd like to bypass the
 # default prometheus cookbook Alertmanager configuration template and implement your own

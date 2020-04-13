@@ -36,4 +36,5 @@ ark dir_name do
   group node['prometheus']['group']
   extension node['prometheus']['file_extension'] unless node['prometheus']['file_extension'].empty?
   not_if "test -e #{Chef::Config['file_cache_path']}/prometheus-#{node['prometheus']['version']}"
+  action :put
 end
